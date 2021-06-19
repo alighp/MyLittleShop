@@ -1,0 +1,14 @@
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\bin\Debug\netstandard2.1\Persistance.deps.json
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\bin\Debug\netstandard2.1\Persistance.dll
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\bin\Debug\netstandard2.1\Persistance.pdb
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\bin\Debug\netstandard2.1\Entities.dll
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\bin\Debug\netstandard2.1\Service.dll
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\bin\Debug\netstandard2.1\Entities.pdb
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\bin\Debug\netstandard2.1\Service.pdb
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\obj\Debug\netstandard2.1\Persistance.csprojAssemblyReference.cache
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\obj\Debug\netstandard2.1\Persistance.AssemblyInfoInputs.cache
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\obj\Debug\netstandard2.1\Persistance.AssemblyInfo.cs
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\obj\Debug\netstandard2.1\Persistance.csproj.CoreCompileInputs.cache
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\obj\Debug\netstandard2.1\Persistance.csproj.CopyComplete
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\obj\Debug\netstandard2.1\Persistance.dll
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Persistance\obj\Debug\netstandard2.1\Persistance.pdb

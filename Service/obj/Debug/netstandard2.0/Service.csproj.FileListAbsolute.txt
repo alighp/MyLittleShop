@@ -1,0 +1,12 @@
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\bin\Debug\netstandard2.0\Service.deps.json
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\bin\Debug\netstandard2.0\Service.dll
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\bin\Debug\netstandard2.0\Service.pdb
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\obj\Debug\netstandard2.0\Service.csprojAssemblyReference.cache
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\obj\Debug\netstandard2.0\Service.AssemblyInfoInputs.cache
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\obj\Debug\netstandard2.0\Service.AssemblyInfo.cs
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\obj\Debug\netstandard2.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\obj\Debug\netstandard2.0\Service.csproj.CopyComplete
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\obj\Debug\netstandard2.0\Service.dll
+C:\Users\mghan\Desktop\Feco1400\MyLittleShop\MyLittleShop\Service\obj\Debug\netstandard2.0\Service.pdb
