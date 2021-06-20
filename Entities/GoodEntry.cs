@@ -12,7 +12,7 @@ namespace MyLittleShop.Entities
         public DateTime Date { get; set; }
         public int Count { get; set; }
         public Good Good { get; set; }
-        public int GoodID { get; set; }
+        public int GoodId { get; set; }
 
     }
 }

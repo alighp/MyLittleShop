@@ -1,14 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyLittleShop.Service.GoodCategories;
+using MyLittleShop.Service.GoodCategories.Contracts;
+using MyLittleShop.Service.GoodCategories.Dtos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MyLittleShop.Model;
-using MyLittleShop.Model.Dtos;
-using MyLittleShop.Repositories;
-using MyLittleShop.UnitOfWorks;
-using MyLittleShop.Entities;
 
 namespace MyLittleShop.Controllers
 {
@@ -16,63 +11,36 @@ namespace MyLittleShop.Controllers
     [ApiController]
     public class GoodCategoriesController : ControllerBase
     {
-        private readonly IGoodCategoryRepository _repository;
-        private readonly IUnitOfWork _unitofwork;
-
-
-        public GoodCategoriesController(IGoodCategoryRepository repository,IUnitOfWork unitofwork)
+        private readonly IGoodCategoryService _service;
+        public GoodCategoriesController(IGoodCategoryService service)
         {
-            _unitofwork = unitofwork;
-            _repository = repository;
+            _service = service;
         }
-
-
         [HttpPost]
         public void Add(CreateGoodCategoryDto dto)
         {
-            if (_repository.ExistByTitle(dto.Title))
-                throw new Exception("Not Found");
-
-            var goodCategory = new GoodCategory
-            {
-                Title = dto.Title
-            };
-            _repository.Add(goodCategory);
-            _unitofwork.Completed();
+            _service.Add(dto);
         }
-
-
         [HttpGet("Goods")]
-        public List<GetListCategoryAndGoodsDto> GetAllCategoriesWithGoods()
+        public List<GetCategoryWithGoodsDto> GetAllCategoriesWithGoods()
         {
-            return _repository.GetAllWithGoods();
+            return _service.GetAllWithGoods();
         }
         [HttpGet]
-        public List<GetListCategoryAndGoodsDto> GetAll()
+        public List<GetCategoryDto> GetAll()
         {
-            return _repository.GetAllWithGoods();
+            return _service.GetAll();
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var GoodCategory = _repository.FindByID(id);
-            if (GoodCategory == null)
-                throw new Exception("Good Not Found");
-
-            _repository.Delete(GoodCategory);
-            _unitofwork.Completed();
+            _service.Delete(id);
         }
-
         [HttpPut("{id}")]
         public void Update(UpdateGoodCategoryDto dto, int id)
         {
-            var GoodCategory = _repository.FindByID(id);
-            if (GoodCategory == null)
-                throw new Exception("Good Not Found");
-
-            GoodCategory.Title = dto.Title;
-            _unitofwork.Completed();
+            _service.Update(dto,id);
         }
     }
 }

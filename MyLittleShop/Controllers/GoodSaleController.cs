@@ -1,14 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyLittleShop.Entities;
-using MyLittleShop.Model;
-using MyLittleShop.Model.Dtos.GoodSale;
-using MyLittleShop.Repositories;
-using MyLittleShop.Service;
-using MyLittleShop.UnitOfWorks;
-using System;
+using MyLittleShop.Service.GoodSales.Contracts;
+using MyLittleShop.Service.GoodSales.Dtos;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,91 +12,35 @@ namespace MyLittleShop.Controllers
     [ApiController]
     public class GoodSaleController : ControllerBase
     {
-
-        private readonly IUnitOfWork _unitofwork;
-        private readonly IGoodSaleRepository _goodSaleRepository;
-        private readonly IGoodRepository _goodRepository;
-
-
-        public GoodSaleController(IGoodSaleRepository goodSaleRepository, IUnitOfWork unitofwork, IGoodRepository goodRepository)
+        private readonly IGoodSaleService _service;
+        public GoodSaleController(IGoodSaleService service)
         {
-            _unitofwork = unitofwork;
-            _goodSaleRepository = goodSaleRepository;
-            _goodRepository = goodRepository;
+            _service = service;
         }
-        // GET: api/<GoodSaleController>
         [HttpGet]
-        public List<GoodSale> GetAll()
+        public List<GetGoodSaleDto> GetAll()
         {
-            return _goodSaleRepository.GetAll();
-
+            return _service.GetAll();
         }
-
-        // GET api/<GoodSaleController>/5
         [HttpGet("{id}")]
-        public GoodSale Get(int id)
+        public GetGoodSaleDto Get(int id)
         {
-
-            return _goodSaleRepository.GetByID(id);
-
+            return _service.GetById(id);
         }
-
-        // POST api/<GoodSaleController>
         [HttpPost]
         public void Post(CreateGoodSaleDto dto)
         {
-            if (!_goodRepository.ExistByCode(dto.Code))
-                throw new Exception("Good Not found");
-
-            var good = _goodRepository.FindByCode(dto.Code);
-            GoodSale goodSale = new GoodSale
-            {
-                Count = dto.Count,
-                Date = dto.Date,
-                GoodID = good.Id,
-
-                TotalPrice = dto.TotalPrice
-            };
-            good.Count -= dto.Count;
-
-            _goodSaleRepository.Add(goodSale);
-            _unitofwork.Completed();
+            _service.Add(dto);
         }
-
-        // PUT api/<GoodSaleController>/5
         [HttpPut("{id}")]
         public void Put(int id, UpdateGoodSaleDto dto)
         {
-
-            if (!_goodSaleRepository.ExistByID(id))
-                throw new Exception("GoodEntry Not Found");
-
-            var goodSale = _goodSaleRepository.Find(id);
-            var good = _goodRepository.FindByCode(dto.Code);
-
-            good.Count += goodSale.Count;
-            goodSale.Count = dto.Count;
-            goodSale.Date = dto.Date;
-            goodSale.TotalPrice = dto.TotalPrice;
-            goodSale.GoodID = good.Id;
-            good.Count -= dto.Count;
-
-
-            _unitofwork.Completed();
+            _service.Update(id, dto);
         }
-
-        // DELETE api/<GoodSaleController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            if (!_goodSaleRepository.ExistByID(id))
-                throw new Exception("GoodEntry Not Found");
-
-            var goodSale = _goodSaleRepository.Find(id);
-
-            _goodSaleRepository.Delete(goodSale);
-            _unitofwork.Completed();
-
+            _service.Delete(id);
         }
     }
 }

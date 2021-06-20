@@ -14,8 +14,8 @@ namespace MyLittleShop.Entities
         public string Title { get; set; }
         public decimal  Price { get; set; }
         public int Count { get; set; }
-        public int CategoryID { get; set; }
-        public ColorEnum ColorID { get; set; }
+        public int CategoryId { get; set; }
+        public Color Color { get; set; }
         public GoodCategory GoodCategory { get; set; }
         public List<GoodEntry> GoodEntries { get; set; }
         public List<GoodSale> GoodSales { get; set; }

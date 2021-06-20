@@ -7,7 +7,7 @@ namespace MyLittleShop.Entities
         public decimal TotalPrice { get; set; }
         public DateTime Date { get; set; }
         public int Count { get; set; }
-        public int GoodID { get; set; }
+        public int GoodId { get; set; }
         public Good Good { get; set; }
 
     }

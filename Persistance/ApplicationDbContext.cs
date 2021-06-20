@@ -14,9 +14,7 @@ namespace MyLittleShop.Persistance
     {
         public ApplicationDbContext(DbContextOptions option) : base(option)
         {
-
         }
-
         public DbSet<GoodCategory> GoodCategories { get; set; }
         public DbSet<Good> Goods { get; set; }
         public DbSet<GoodSale> GoodSales { get; set; }
@@ -24,7 +22,6 @@ namespace MyLittleShop.Persistance
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GoodCategorytEntityMap).Assembly);
-
         }
     }
 }

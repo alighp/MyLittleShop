@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Entities\MyLittleShop.Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Goods\Exceptions\" />
+  </ItemGroup>
+
 </Project>
